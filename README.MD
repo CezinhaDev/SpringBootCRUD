@@ -1,127 +1,75 @@
-CRUD com Spring Boot
+# SpringBootCRUD
 
-Este projeto é um estudo de CRUD (Create, Read, Update, Delete) utilizando Spring Boot, Spring Web, Spring Data JPA e H2 Database. O objetivo é praticar o desenvolvimento de APIs RESTful com persistência em banco de dados em memória.
+CRUD (Create, Read, Update, Delete) desenvolvido em **Java com Spring Boot**, utilizando **Spring Web**, **Spring Data JPA** e **H2 Database**. Este projeto é ideal para quem quer estudar desenvolvimento backend, criação de APIs REST e persistência de dados em memória.
 
-Tecnologias Utilizadas
+## 🚀 Funcionalidades
 
-Java 17
+- **Criar** novos registros  
+- **Listar** todos os registros  
+- **Atualizar** registros existentes  
+- **Deletar** registros  
+- Teste de endpoints via **Postman**  
+- Banco de dados em memória **H2** para fácil teste e desenvolvimento
 
-Spring Boot
+## 🛠 Tecnologias Utilizadas
 
-Spring Web
+- Java 17  
+- Spring Boot  
+- Spring Web  
+- Spring Data JPA  
+- H2 Database  
+- Maven  
 
-Spring Data JPA
+## 📦 Como Rodar o Projeto
 
-H2 Database (banco de dados em memória)
+1. Clone o repositório:  
+```bash
+git clone https://github.com/SEU-USUARIO/SpringBootCRUD.git
+Entre na pasta do projeto:
 
-Maven (gerenciamento de dependências)
+bash
+Copiar código
+cd SpringBootCRUD
+Execute a aplicação usando Maven:
 
-Postman (testes de API)
+bash
+Copiar código
+mvn spring-boot:run
+Acesse o banco H2 pelo console:
 
-Estrutura do Projeto
-src/main/java/com/crud/demo
-├── controllers
-│   └── UserControllers.java  # Endpoints da API
-├── entity
-│   └── User.java             # Entidade do usuário
-├── repository
-│   ├── UserRepository.java   # Interface para operações no banco
-│   └── UserRequest.java      # DTO para requisições de atualização
-└── DemoApplication.java      # Classe principal do Spring Boot
-src/main/resources
-├── application.properties    # Configurações do Spring Boot e H2
-
-Funcionalidades
-
-A API permite as seguintes operações sobre usuários:
-
-Método HTTP	Endpoint	Descrição
-POST	/users	Criar um novo usuário
-GET	/users	Listar todos os usuários
-GET	/users/{id}	Buscar usuário por ID
-PUT	/users/{id}	Atualizar usuário por ID
-DELETE	/users/{id}	Deletar usuário por ID
-Configuração do H2 Database
-
-O projeto utiliza o H2 Database em memória. As configurações estão no arquivo application.properties:
-
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=password
-spring.h2.console.enabled=true
-spring.jpa.hibernate.ddl-auto=update
-
-
-Para acessar o console H2, abra:
-
+bash
+Copiar código
 http://localhost:8080/h2-console
-
-
 JDBC URL: jdbc:h2:mem:testdb
 
 Username: sa
 
 Password: password
 
-Como Rodar o Projeto
+Teste os endpoints via Postman:
 
-Clone o repositório:
+GET /entidade – Listar todos os registros
 
-git clone <seu-repositorio-url>
+POST /entidade – Criar novo registro
 
+PUT /entidade/{id} – Atualizar registro
 
-Entre na pasta do projeto:
+DELETE /entidade/{id} – Deletar registro
 
-cd demo
+Substitua entidade pelo nome do recurso que você criou (ex: users, produtos, etc).
 
+📖 Estrutura do Projeto
+bash
+Copiar código
+src/
+ └─ main/
+     ├─ java/com/exemplo/
+     │   ├─ controller/  # Controllers REST
+     │   ├─ entity/      # Classes de modelo
+     │   └─ repository/  # Interfaces de acesso a dados
+     └─ resources/
+         └─ application.properties  # Configurações da aplicação
+💡 Observações
+Banco de dados H2 é em memória, ou seja, todos os dados são perdidos ao reiniciar a aplicação.
 
-Execute o projeto usando Maven:
-
-./mvnw spring-boot:run
-
-
-Acesse a API em:
-
-http://localhost:8080/users
-
-
-Teste os endpoints utilizando Postman.
-
-Exemplo de Requisição com Postman
-
-Criar usuário (POST)
-
-URL: http://localhost:8080/users
-
-Body (JSON):
-
-{
-  "name": "César Henrique",
-  "email": "cesar@email.com"
-}
-
-
-Atualizar usuário (PUT)
-
-URL: http://localhost:8080/users/{id}
-
-Body (JSON):
-
-{
-  "name": "César H.",
-  "email": "cesar.h@email.com"
-}
-
-
-Deletar usuário (DELETE)
-
-URL: http://localhost:8080/users/{id}
-
-Observações
-
-O projeto utiliza UUID como identificador de usuários.
-
-Banco de dados H2 é em memória, ou seja, os dados serão perdidos ao reiniciar a aplicação.
-
-Ótimo para aprendizado e testes de CRUD sem necessidade de banco externo.
+Ideal para estudos e testes de CRUD com Spring Boot.
