@@ -22,23 +22,19 @@ CRUD (Create, Read, Update, Delete) desenvolvido em **Java com Spring Boot**, ut
 
 ## 📦 Como Rodar o Projeto
 
-1. Clone o repositório:  
-```bash
+
 git clone https://github.com/SEU-USUARIO/SpringBootCRUD.git
 Entre na pasta do projeto:
 
-bash
-Copiar código
+
 cd SpringBootCRUD
 Execute a aplicação usando Maven:
 
-bash
-Copiar código
+
 mvn spring-boot:run
 Acesse o banco H2 pelo console:
 
-bash
-Copiar código
+
 http://localhost:8080/h2-console
 JDBC URL: jdbc:h2:mem:testdb
 
@@ -59,8 +55,7 @@ DELETE /entidade/{id} – Deletar registro
 Substitua entidade pelo nome do recurso que você criou (ex: users, produtos, etc).
 
 📖 Estrutura do Projeto
-bash
-Copiar código
+
 src/
  └─ main/
      ├─ java/com/exemplo/
